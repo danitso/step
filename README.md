@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Most developers have either heard of DevOps or are going to hear about it in the nearest future. The concept basically tries to bring system administrators and developers closer together in order to achieve a more efficient operation of the web solutions in an organization. However, introducing DevOps in an organization typically also leads to one big question:
+Most developers have either heard of DevOps or are going to hear about it in the nearest future. The concept basically tries to bring system administrators and developers closer together in order to achieve a more efficient operation of the web platforms in an organization. However, introducing DevOps in an organization typically also leads to one big question:
 
 > Which toolchain is right for us?
 
@@ -14,6 +14,6 @@ While we cannot predict your needs, we _can_ tell you why you should go with `ST
 
 1. You want a developer friendly toolchain which just works
 1. You want to run web applications written for .Net Core, NodeJS or PHP
-1. You want all the common management choices such as API, CLI and UI access
+1. You want all the common management choices i.e. API, CLI and UI access
 
 Also, `STEP` is completely free and Open Source so why not give it a go?
