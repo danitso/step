@@ -8,11 +8,11 @@
 
 Most developers have already heard of DevOps and the rest are surely going to hear about it in the nearest future.
 
-The DevOps concept basically tries to unite system administrators and developers in order to achieve a more efficient operation of the hosted platforms in an organization. However, introducing DevOps in an organization typically also leads to one very important question:
+The DevOps concept basically tries to unite system administrators and developers in order to achieve a more efficient operation of hosted solutions. However, introducing DevOps in any organization typically leads to one very important question:
 
 > Which toolchain is right for us?
 
-While we cannot predict your needs, we _can_ tell you why you should go with `STEP`:
+While we cannot predict your exact requirements, we _can_ tell you why you should go with `STEP`:
 
 1. You want a developer friendly toolchain which just works
 1. You want to run web applications written for .Net Core, NodeJS or PHP
