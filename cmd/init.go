@@ -9,6 +9,11 @@ import (
 )
 
 func init() {
+	initCmd.Flags().String("key", "", "Encryption key")
+	initCmd.Flags().String("repository", "", "Repository URL")
+	initCmd.Flags().String("repository-password", "", "Repository password")
+	initCmd.Flags().String("repository-username", "", "Repository username")
+
 	rootCmd.AddCommand(initCmd)
 }
 
