@@ -5,9 +5,9 @@
 package main
 
 import (
-	"fmt"
+	"github.com/danitso/step/cmd"
 )
 
 func main() {
-	fmt.Println("Work in progress")
+	cmd.Execute()
 }
