@@ -17,8 +17,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	pushCmdEncryptionKeyFlag = pushCmd.Flags().StringP("encryption-key", "k", "", "The encryption key")
-	pushCmdForceFlag         = pushCmd.Flags().BoolP("force", "f", false, "Forcefully push local changes by overwriting remote changes")
+	pushCmdForceFlag = pushCmd.Flags().BoolP("force", "f", false, "Forcefully push local changes by overwriting remote changes")
 )
 
 func init() {

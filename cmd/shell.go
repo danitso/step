@@ -10,9 +10,10 @@ import (
 
 var (
 	shellCmd = &cobra.Command{
-		Use:   "shell",
-		Short: "Open a resource shell",
-		Long:  "Open a resource shell",
+		Use:     "shell",
+		Aliases: []string{"sh"},
+		Short:   "Open a resource shell",
+		Long:    "Open a resource shell",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},

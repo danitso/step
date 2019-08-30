@@ -17,8 +17,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	pullCmdEncryptionKeyFlag = pullCmd.Flags().StringP("encryption-key", "k", "", "The encryption key")
-	pullCmdForceFlag         = pullCmd.Flags().BoolP("force", "f", false, "Forcefully pull remote changes by overwriting local changes")
+	pullCmdForceFlag = pullCmd.Flags().BoolP("force", "f", false, "Forcefully pull remote changes by overwriting local changes")
 )
 
 func init() {

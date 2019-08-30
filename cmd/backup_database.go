@@ -10,9 +10,10 @@ import (
 
 var (
 	backupDatabaseCmd = &cobra.Command{
-		Use:   "database",
-		Short: "Backup the data for a database resource",
-		Long:  "Backup the data for a database resource",
+		Use:     "database",
+		Aliases: []string{"db"},
+		Short:   "Backup the data for a database resource",
+		Long:    "Backup the data for a database resource",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},

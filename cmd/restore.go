@@ -17,7 +17,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	restoreCmdPathFlag = restoreCmd.PersistentFlags().String("path", "", "The absolute path to backup file")
+	restoreCmdPathFlag = restoreCmd.PersistentFlags().String("path", "", "The absolute path to a backup file")
 	restoreCmdPipeFlag = restoreCmd.PersistentFlags().Bool("pipe", false, "Whether to retrieve the backup data from STDIN")
 )
 

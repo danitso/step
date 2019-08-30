@@ -10,9 +10,10 @@ import (
 
 var (
 	restoreDatabaseCmd = &cobra.Command{
-		Use:   "database",
-		Short: "Restore the data for a database resource",
-		Long:  "Restore the data for a database resource",
+		Use:     "database",
+		Aliases: []string{"db"},
+		Short:   "Restore the data for a database resource",
+		Long:    "Restore the data for a database resource",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},

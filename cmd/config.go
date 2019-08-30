@@ -29,7 +29,6 @@ var (
 	configCmdSMTPHostnameFlag        = configCmd.Flags().String("smtp-hostname", "", "The hostname for SMTP server")
 	configCmdSMTPPasswordFlag        = configCmd.Flags().String("smtp-password", "", "The password for SMTP server")
 	configCmdSMTPPortFlag            = configCmd.Flags().Uint16("smtp-port", 587, "The port number for SMTP server")
-	configCmdSMTPSecureFlag          = configCmd.Flags().Bool("smtp-secure", true, "Whether to authenticate with the supplied credentials")
 	configCmdSMTPTLSFlag             = configCmd.Flags().Bool("smtp-tls", true, "Whether to enable TLS")
 	configCmdSMTPUsernameFlag        = configCmd.Flags().String("smtp-username", "", "The username for SMTP server")
 	configCmdSSLCertificateFlag      = configCmd.Flags().String("ssl-certificate", "", "The absolute path to SSL certificate or Base64 encoded string")

@@ -10,9 +10,10 @@ import (
 
 var (
 	modifyCmd = &cobra.Command{
-		Use:   "modify",
-		Short: "Modify a resource",
-		Long:  "Modify a resource",
+		Use:     "modify",
+		Aliases: []string{"mod"},
+		Short:   "Modify a resource",
+		Long:    "Modify a resource",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},
