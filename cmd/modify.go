@@ -9,6 +9,8 @@ import (
 )
 
 func init() {
+	modifyCmd.PersistentFlags().Bool("deploy", false, "Whether to deploy the resource")
+
 	rootCmd.AddCommand(modifyCmd)
 }
 
