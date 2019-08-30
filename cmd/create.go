@@ -8,17 +8,18 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	createCmd = &cobra.Command{
+		Use:   "create",
+		Short: "Create a resource",
+		Long:  "Create a resource",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+	createCmdDeployFlag = createCmd.PersistentFlags().Bool("deploy", false, "Whether to deploy the resource")
+)
+
 func init() {
-	createCmd.PersistentFlags().Bool("deploy", false, "Whether to deploy the resource")
-
 	rootCmd.AddCommand(createCmd)
-}
-
-var createCmd = &cobra.Command{
-	Use:   "create",
-	Short: "Create a resource",
-	Long:  "Create a resource",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

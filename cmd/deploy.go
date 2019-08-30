@@ -8,15 +8,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	deployCmd = &cobra.Command{
+		Use:   "deploy",
+		Short: "Deploy a resource",
+		Long:  "Deploy a resource",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+)
+
 func init() {
 	rootCmd.AddCommand(deployCmd)
-}
-
-var deployCmd = &cobra.Command{
-	Use:   "deploy",
-	Short: "Deploy a resource",
-	Long:  "Deploy a resource",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

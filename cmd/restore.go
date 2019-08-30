@@ -8,18 +8,19 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	restoreCmd = &cobra.Command{
+		Use:   "restore",
+		Short: "Restore the data for a resource",
+		Long:  "Restore the data for a resource",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+	restoreCmdPathFlag = restoreCmd.PersistentFlags().String("path", "", "Absolute path to backup file")
+	restoreCmdPipeFlag = restoreCmd.PersistentFlags().Bool("pipe", false, "Whether to retrieve the backup data from STDIN")
+)
+
 func init() {
-	restoreCmd.PersistentFlags().String("path", "", "Absolute path to backup file")
-	restoreCmd.PersistentFlags().Bool("pipe", false, "Whether to retrieve the backup data from STDIN")
-
 	rootCmd.AddCommand(restoreCmd)
-}
-
-var restoreCmd = &cobra.Command{
-	Use:   "restore",
-	Short: "Restore the data for a resource",
-	Long:  "Restore the data for a resource",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

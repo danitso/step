@@ -8,17 +8,18 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	pullCmd = &cobra.Command{
+		Use:   "pull",
+		Short: "Pull changes for the toolchain",
+		Long:  "Pull changes for the toolchain",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+	pullCmdForceFlag = pullCmd.Flags().BoolP("force", "f", false, "Forcefully pull remote changes by overwriting local changes")
+)
+
 func init() {
-	pullCmd.Flags().BoolP("force", "f", false, "Forcefully pull remote changes by overwriting local changes")
-
 	rootCmd.AddCommand(pullCmd)
-}
-
-var pullCmd = &cobra.Command{
-	Use:   "pull",
-	Short: "Pull changes for the toolchain",
-	Long:  "Pull changes for the toolchain",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

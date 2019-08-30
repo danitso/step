@@ -8,15 +8,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	upgradeCmd = &cobra.Command{
+		Use:   "upgrade",
+		Short: "Upgrade a resource",
+		Long:  "Upgrade a resource",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+)
+
 func init() {
 	rootCmd.AddCommand(upgradeCmd)
-}
-
-var upgradeCmd = &cobra.Command{
-	Use:   "upgrade",
-	Short: "Upgrade a resource",
-	Long:  "Upgrade a resource",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

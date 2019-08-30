@@ -8,17 +8,18 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	modifyCmd = &cobra.Command{
+		Use:   "modify",
+		Short: "Modify a resource",
+		Long:  "Modify a resource",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+	modifyCmdDeployFlag = modifyCmd.PersistentFlags().Bool("deploy", false, "Whether to deploy the resource")
+)
+
 func init() {
-	modifyCmd.PersistentFlags().Bool("deploy", false, "Whether to deploy the resource")
-
 	rootCmd.AddCommand(modifyCmd)
-}
-
-var modifyCmd = &cobra.Command{
-	Use:   "modify",
-	Short: "Modify a resource",
-	Long:  "Modify a resource",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

@@ -5,30 +5,22 @@
 package cmd
 
 import (
-	"log"
-	"os"
-
 	"github.com/spf13/cobra"
 )
 
-func init() {
-	rootDir, err := os.Getwd()
-
-	if err != nil {
-		log.Fatal(err)
+var (
+	daemonizeCmd = &cobra.Command{
+		Use:   "daemonize",
+		Short: "Daemonizes the toolchain",
+		Long:  "Daemonizes the toolchain",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
 	}
+	daemonizeCmdBackgroundFlag = daemonizeCmd.Flags().Bool("background", false, "Whether to run in the background")
+	daemonizeCmdRootFlag       = daemonizeCmd.Flags().String("root", "", "Absolute path to the toolchain directory")
+)
 
-	daemonizeCmd.Flags().Bool("background", false, "Whether to run in the background")
-	daemonizeCmd.Flags().String("root", rootDir, "Absolute path to the toolchain directory")
-
+func init() {
 	rootCmd.AddCommand(daemonizeCmd)
-}
-
-var daemonizeCmd = &cobra.Command{
-	Use:   "daemonize",
-	Short: "Daemonizes the toolchain",
-	Long:  "Daemonizes the toolchain",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

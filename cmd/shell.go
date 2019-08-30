@@ -8,15 +8,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	shellCmd = &cobra.Command{
+		Use:   "shell",
+		Short: "Invoke a resource shell",
+		Long:  "Invoke a resource shell",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+)
+
 func init() {
 	rootCmd.AddCommand(shellCmd)
-}
-
-var shellCmd = &cobra.Command{
-	Use:   "shell",
-	Short: "Invoke a resource shell",
-	Long:  "Invoke a resource shell",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

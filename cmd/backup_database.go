@@ -8,15 +8,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	backupDatabaseCmd = &cobra.Command{
+		Use:   "database",
+		Short: "Backup the data for a database resource",
+		Long:  "Backup the data for a database resource",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+)
+
 func init() {
 	backupCmd.AddCommand(backupDatabaseCmd)
-}
-
-var backupDatabaseCmd = &cobra.Command{
-	Use:   "database",
-	Short: "Backup the data for a database resource",
-	Long:  "Backup the data for a database resource",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

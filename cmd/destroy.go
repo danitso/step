@@ -8,15 +8,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	destroyCmd = &cobra.Command{
+		Use:   "destroy",
+		Short: "Destroy a resource",
+		Long:  "Destroy a resource",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+)
+
 func init() {
 	rootCmd.AddCommand(destroyCmd)
-}
-
-var destroyCmd = &cobra.Command{
-	Use:   "destroy",
-	Short: "Destroy a resource",
-	Long:  "Destroy a resource",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

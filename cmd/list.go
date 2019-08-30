@@ -8,15 +8,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	listCmd = &cobra.Command{
+		Use:   "list",
+		Short: "List resources",
+		Long:  "List resources",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+)
+
 func init() {
 	rootCmd.AddCommand(listCmd)
-}
-
-var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "List resources",
-	Long:  "List resources",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

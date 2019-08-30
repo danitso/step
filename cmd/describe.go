@@ -8,15 +8,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	describeCmd = &cobra.Command{
+		Use:   "describe",
+		Short: "Describe a resource",
+		Long:  "Describe a resource",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+)
+
 func init() {
 	rootCmd.AddCommand(describeCmd)
-}
-
-var describeCmd = &cobra.Command{
-	Use:   "describe",
-	Short: "Describe a resource",
-	Long:  "Describe a resource",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }

@@ -8,20 +8,21 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	initCmd = &cobra.Command{
+		Use:   "init",
+		Short: "Initialize the toolchain",
+		Long:  "Initialize the toolchain",
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.HelpFunc()(cmd, args)
+		},
+	}
+	initCmdEncryptionKeyFlag      = initCmd.Flags().String("encryption-key", "", "Encryption key")
+	initCmdRepositoryFlag         = initCmd.Flags().String("repository", "", "Repository URL")
+	initCmdRepositoryPasswordFlag = initCmd.Flags().String("repository-password", "", "Repository password")
+	initCmdRepositoryUsernameFlag = initCmd.Flags().String("repository-username", "", "Repository username")
+)
+
 func init() {
-	initCmd.Flags().String("key", "", "Encryption key")
-	initCmd.Flags().String("repository", "", "Repository URL")
-	initCmd.Flags().String("repository-password", "", "Repository password")
-	initCmd.Flags().String("repository-username", "", "Repository username")
-
 	rootCmd.AddCommand(initCmd)
-}
-
-var initCmd = &cobra.Command{
-	Use:   "init",
-	Short: "Initialize the toolchain",
-	Long:  "Initialize the toolchain",
-	Run: func(cmd *cobra.Command, args []string) {
-		cmd.HelpFunc()(cmd, args)
-	},
 }
