@@ -8,6 +8,11 @@ import (
 	"github.com/danitso/step/cmd"
 )
 
+const (
+	// ProductVersion defines the version number.
+	ProductVersion = "0.1.0"
+)
+
 func main() {
-	cmd.Execute()
+	cmd.Execute(ProductVersion)
 }

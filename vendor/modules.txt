@@ -1,3 +1,5 @@
+# github.com/MakeNowJust/heredoc v1.0.0
+github.com/MakeNowJust/heredoc
 # github.com/inconshreveable/mousetrap v1.0.0
 github.com/inconshreveable/mousetrap
 # github.com/spf13/cobra v0.0.5
