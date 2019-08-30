@@ -11,8 +11,8 @@ import (
 var (
 	shellCmd = &cobra.Command{
 		Use:   "shell",
-		Short: "Invoke a resource shell",
-		Long:  "Invoke a resource shell",
+		Short: "Open a resource shell",
+		Long:  "Open a resource shell",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},

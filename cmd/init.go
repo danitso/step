@@ -17,10 +17,10 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	initCmdEncryptionKeyFlag      = initCmd.Flags().String("encryption-key", "", "Encryption key")
-	initCmdRepositoryFlag         = initCmd.Flags().String("repository", "", "Repository URL")
-	initCmdRepositoryPasswordFlag = initCmd.Flags().String("repository-password", "", "Repository password")
-	initCmdRepositoryUsernameFlag = initCmd.Flags().String("repository-username", "", "Repository username")
+	initCmdEncryptionKeyFlag         = initCmd.Flags().StringP("encryption-key", "k", "", "The encryption key")
+	initCmdGitRepositoryFlag         = initCmd.Flags().StringP("git-repository", "r", "", "The git repository URL")
+	initCmdGitRepositoryPasswordFlag = initCmd.Flags().StringP("git-repository-password", "p", "", "The git password")
+	initCmdGitRepositoryUsernameFlag = initCmd.Flags().StringP("git-repository-username", "u", "", "The git username")
 )
 
 func init() {
