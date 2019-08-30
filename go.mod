@@ -1,4 +1,4 @@
-module step
+module github.com/danitso/step
 
 go 1.12
 
