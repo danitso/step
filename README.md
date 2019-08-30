@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Most developers have either heard of DevOps or are going to hear about it in the nearest future. The concept basically tries to bring system administrators and developers closer together in order to achieve a more efficient operation of the web platforms in an organization. However, introducing DevOps in an organization typically also leads to one big question:
+Most developers have already heard of DevOps and the rest are most likely going to hear about it in the nearest future. The concept basically tries to bring system administrators and developers closer together in order to achieve a more efficient operation of the web platforms in an organization. However, introducing DevOps in an organization typically also leads to one big question:
 
 > Which toolchain is right for us?
 
