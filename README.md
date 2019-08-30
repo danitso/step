@@ -1,14 +1,14 @@
 # Simplified Toolchain for Extensible Platforms
 
-`STEP` is a simplified all-in-one toolchain for web platforms. The goal is to provide a standardized workflow, which is capable of supporting both simple and complex web platforms powered by some of the most popular runtime solutions.
+`STEP` is a simplified all-in-one toolchain for extensible web platforms (micro service architecture). The goal is to provide a standardized workflow, which is capable of supporting both simple and complex web platforms powered by some of the most popular runtime solutions.
 
 > **WARNING:** This project is under active development and should be considered alpha.
 
 ## Introduction
 
-Most developers have already heard of DevOps and the rest are most likely going to hear about it in the nearest future.
+Most developers have already heard of DevOps and the rest are surely going to hear about it in the nearest future.
 
-The concept basically tries to bring system administrators and developers closer together in order to achieve a more efficient operation of the hosted platforms in an organization. However, introducing DevOps in an organization typically also leads to one big question:
+The DevOps concept basically tries to unite system administrators and developers in order to achieve a more efficient operation of the hosted platforms in an organization. However, introducing DevOps in an organization typically also leads to one very important question:
 
 > Which toolchain is right for us?
 
