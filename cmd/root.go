@@ -30,8 +30,8 @@ var (
 		},
 	}
 	rootCmdAssumeYesFlag = rootCmd.PersistentFlags().BoolP("assume-yes", "y", false, "Silently confirm any action")
-	rootCmdDebugFlag     = rootCmd.PersistentFlags().BoolP("debug", "d", false, "Enable debug messages")
-	rootCmdVerboseFlag   = rootCmd.PersistentFlags().BoolP("verbose", "v", false, "Enable verbose messages")
+	rootCmdDebugFlag     = rootCmd.PersistentFlags().BoolP("debug", "d", false, "Display debug messages")
+	rootCmdVerboseFlag   = rootCmd.PersistentFlags().BoolP("verbose", "v", false, "Display verbose messages")
 	rootCmdVersionFlag   = rootCmd.Flags().BoolP("version", "V", false, "Display version information")
 )
 
