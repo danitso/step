@@ -17,8 +17,8 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	daemonizeCmdBackgroundFlag = daemonizeCmd.Flags().Bool("background", false, "Whether to run in the background")
-	daemonizeCmdRootFlag       = daemonizeCmd.Flags().String("root", "", "The absolute path to the toolchain directory")
+	daemonizeCmdBackgroundFlag = daemonizeCmd.Flags().Bool("background", false, "whether to run in the background")
+	daemonizeCmdRootFlag       = daemonizeCmd.Flags().String("root", "", "the absolute path to the toolchain directory")
 )
 
 func init() {

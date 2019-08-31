@@ -18,7 +18,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	modifyCmdDeployFlag = modifyCmd.PersistentFlags().Bool("deploy", false, "Whether to deploy the resource")
+	modifyCmdDeployFlag = modifyCmd.PersistentFlags().Bool("deploy", false, "whether to deploy the resource")
 )
 
 func init() {

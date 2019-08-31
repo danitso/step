@@ -17,7 +17,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	pushCmdForceFlag = pushCmd.Flags().BoolP("force", "f", false, "Forcefully push local changes by overwriting remote changes")
+	pushCmdForceFlag = pushCmd.Flags().BoolP("force", "f", false, "forcefully push local changes by overwriting remote changes")
 )
 
 func init() {

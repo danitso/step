@@ -17,8 +17,8 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	backupCmdPathFlag = backupCmd.PersistentFlags().String("path", "", "The absolute path to a backup file")
-	backupCmdPipeFlag = backupCmd.PersistentFlags().Bool("pipe", false, "Whether to write the backup data to STDOUT")
+	backupCmdPathFlag = backupCmd.PersistentFlags().String("path", "", "the absolute path to a backup file")
+	backupCmdPipeFlag = backupCmd.PersistentFlags().Bool("pipe", false, "whether to write the backup data to STDOUT")
 )
 
 func init() {

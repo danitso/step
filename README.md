@@ -1,6 +1,6 @@
 # Simplified Toolchain for Extensible Platforms
 
-`STEP` is a simplified all-in-one toolchain for extensible web platforms (micro service architecture). The goal is to provide a standardized workflow, which is capable of supporting both simple and complex web platforms powered by some of the most popular runtime solutions.
+`STEP` is a simplified toolchain for extensible platforms (micro service architecture).
 
 > **WARNING:** This project is under active development and should be considered alpha.
 
