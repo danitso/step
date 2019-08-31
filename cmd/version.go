@@ -11,8 +11,8 @@ import (
 var (
 	versionCmd = &cobra.Command{
 		Use:   "version",
-		Short: "Print version information",
-		Long:  "Print version information",
+		Short: "Display version information",
+		Long:  "Display version information",
 		Run: func(cmd *cobra.Command, args []string) {
 			rootCmd.SetArgs([]string{"--version"})
 			rootCmd.Execute()
@@ -22,4 +22,5 @@ var (
 
 func init() {
 	rootCmd.AddCommand(versionCmd)
+	changeHelpUsageText(versionCmd)
 }

@@ -22,4 +22,5 @@ var (
 
 func init() {
 	rootCmd.AddCommand(shellCmd)
+	changeHelpUsageText(shellCmd)
 }

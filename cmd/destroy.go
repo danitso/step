@@ -21,4 +21,5 @@ var (
 
 func init() {
 	rootCmd.AddCommand(destroyCmd)
+	changeHelpUsageText(destroyCmd)
 }

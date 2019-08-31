@@ -21,4 +21,5 @@ var (
 
 func init() {
 	rootCmd.AddCommand(deployCmd)
+	changeHelpUsageText(deployCmd)
 }

@@ -17,9 +17,10 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	pullCmdForceFlag = pullCmd.Flags().BoolP("force", "f", false, "forcefully pull remote changes by overwriting local changes")
+	pullCmdForceFlag = pullCmd.Flags().BoolP("force", "f", false, "Forcefully pull remote changes by overwriting local changes")
 )
 
 func init() {
 	rootCmd.AddCommand(pullCmd)
+	changeHelpUsageText(pullCmd)
 }

@@ -22,4 +22,5 @@ var (
 
 func init() {
 	backupCmd.AddCommand(backupDatabaseCmd)
+	changeHelpUsageText(backupDatabaseCmd)
 }

@@ -12,6 +12,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const (
+	// ProductVersion defines the version number.
+	ProductVersion = "0.1.0"
+)
+
 var (
 	productVersion = ""
 	rootCmd        = &cobra.Command{
@@ -24,12 +29,19 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	rootCmdVersionFlag = rootCmd.Flags().BoolP("version", "V", false, "print version information")
+	rootCmdAssumeYesFlag = rootCmd.PersistentFlags().BoolP("assume-yes", "y", false, "Silently confirm any action")
+	rootCmdDebugFlag     = rootCmd.PersistentFlags().BoolP("debug", "d", false, "Enable debug messages")
+	rootCmdVerboseFlag   = rootCmd.PersistentFlags().BoolP("verbose", "v", false, "Enable verbose messages")
+	rootCmdVersionFlag   = rootCmd.Flags().BoolP("version", "V", false, "Display version information")
 )
 
+func init() {
+	rootCmd.Version = ProductVersion
+}
+
 // Execute invokes the root command.
-func Execute(version string) {
-	rootCmd.Version = version
+func Execute() {
+	changeHelpUsageText(rootCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)

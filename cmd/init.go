@@ -17,12 +17,13 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	initCmdEncryptionKeyFlag         = initCmd.Flags().StringP("encryption-key", "k", "", "the encryption key")
-	initCmdGitRepositoryFlag         = initCmd.Flags().StringP("git-repository", "r", "", "the git repository URL")
-	initCmdGitRepositoryPasswordFlag = initCmd.Flags().StringP("git-repository-password", "p", "", "the git password")
-	initCmdGitRepositoryUsernameFlag = initCmd.Flags().StringP("git-repository-username", "u", "", "the git username")
+	initCmdEncryptionKeyFlag         = initCmd.Flags().StringP("encryption-key", "k", "", "The encryption key")
+	initCmdGitRepositoryFlag         = initCmd.Flags().StringP("git-repository", "r", "", "The git repository URL")
+	initCmdGitRepositoryPasswordFlag = initCmd.Flags().StringP("git-repository-password", "p", "", "The git password or token")
+	initCmdGitRepositoryUsernameFlag = initCmd.Flags().StringP("git-repository-username", "u", "", "The git username")
 )
 
 func init() {
 	rootCmd.AddCommand(initCmd)
+	changeHelpUsageText(initCmd)
 }
