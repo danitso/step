@@ -10,9 +10,10 @@ import (
 
 var (
 	configCmd = &cobra.Command{
-		Use:   "config",
-		Short: "Configure the toolchain",
-		Long:  "Configure the toolchain",
+		Use:     "config",
+		Aliases: []string{"cfg", "conf"},
+		Short:   "Configure the toolchain",
+		Long:    "Configure the toolchain",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},

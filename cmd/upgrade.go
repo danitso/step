@@ -10,9 +10,10 @@ import (
 
 var (
 	upgradeCmd = &cobra.Command{
-		Use:   "upgrade",
-		Short: "Upgrade a resource",
-		Long:  "Upgrade a resource",
+		Use:     "upgrade",
+		Aliases: []string{"up"},
+		Short:   "Upgrade a resource",
+		Long:    "Upgrade a resource",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},

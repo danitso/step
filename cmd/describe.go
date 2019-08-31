@@ -10,9 +10,10 @@ import (
 
 var (
 	describeCmd = &cobra.Command{
-		Use:   "describe",
-		Short: "Describe a resource",
-		Long:  "Describe a resource",
+		Use:     "describe",
+		Aliases: []string{"desc"},
+		Short:   "Describe a resource",
+		Long:    "Describe a resource",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},
