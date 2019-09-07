@@ -6,13 +6,14 @@ package main
 
 import (
 	"github.com/danitso/step/cmd"
-	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/packr/v2"
 )
 
 func main() {
-	// Create the box for the Terraform templates.
-	templatesBox := packr.NewBox("./templates")
+	// Create the boxes for the Docker images and Terraform templates.
+	imagesBox := packr.New("images", "./images")
+	templatesBox := packr.New("templates", "./templates")
 
 	// Run the command line utility.
-	cmd.Execute(&templatesBox)
+	cmd.Execute(imagesBox, templatesBox)
 }

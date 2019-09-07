@@ -10,26 +10,30 @@ VERSION=0.1.0
 default: build
 
 build:
-	packr build -mod=vendor -o "bin/$(NAME)"
+	rm -f "bin/$(NAME)"
+	packr2 build -mod=vendor -o "bin/$(NAME)"
+	packr2 clean
 
 fmt:
 	gofmt -w $(GOFMT_FILES)
 
 test:
-	packr test -v
+	packr2 test -v
 
 init:
-	packr get ./...
+	packr2 get ./...
 
 targets: $(TARGETS)
 
 $(TARGETS):
-	GOOS=$@ GOARCH=amd64 CGO_ENABLED=0 packr build \
+	rm -f "dist/$@/$(NAME)" "dist/$(NAME)_v$(VERSION)_$@_amd64.zip"
+	GOOS=$@ GOARCH=amd64 CGO_ENABLED=0 packr2 build \
 		-mod=vendor \
 		-o "dist/$@/$(NAME)" \
 		-a -ldflags '-extldflags "-static"'
 	zip \
 		-j "dist/$(NAME)_v$(VERSION)_$@_amd64.zip" \
 		"dist/$@/$(NAME)"
+	packr2 clean
 
 .PHONY: build fmt test init targets $(TARGETS)

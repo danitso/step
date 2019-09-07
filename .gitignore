@@ -4,6 +4,9 @@
 
 bin/
 dist/
+packrd/
+
+main-packr.go
 
 *~
 *.backup
