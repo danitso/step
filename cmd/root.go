@@ -9,6 +9,7 @@ import (
 	"os"
 
 	"github.com/MakeNowJust/heredoc"
+	"github.com/gobuffalo/packr"
 	"github.com/spf13/cobra"
 )
 
@@ -40,7 +41,7 @@ func init() {
 }
 
 // Execute invokes the root command.
-func Execute() {
+func Execute(templatesBox *packr.Box) {
 	changeHelpUsageText(rootCmd)
 
 	if err := rootCmd.Execute(); err != nil {

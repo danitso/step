@@ -10,21 +10,21 @@ VERSION=0.1.0
 default: build
 
 build:
-	go build -mod=vendor -o "bin/$(NAME)"
+	packr build -mod=vendor -o "bin/$(NAME)"
 
 fmt:
 	gofmt -w $(GOFMT_FILES)
 
 test:
-	go test -v
+	packr test -v
 
 init:
-	go get ./...
+	packr get ./...
 
 targets: $(TARGETS)
 
 $(TARGETS):
-	GOOS=$@ GOARCH=amd64 CGO_ENABLED=0 go build \
+	GOOS=$@ GOARCH=amd64 CGO_ENABLED=0 packr build \
 		-mod=vendor \
 		-o "dist/$@/$(NAME)" \
 		-a -ldflags '-extldflags "-static"'

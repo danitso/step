@@ -11,8 +11,8 @@ import (
 var (
 	daemonizeCmd = &cobra.Command{
 		Use:   "daemonize",
-		Short: "Daemonizes the management service",
-		Long:  "Daemonizes the management service",
+		Short: "Daemonizes the management services",
+		Long:  "Daemonizes the management services",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},

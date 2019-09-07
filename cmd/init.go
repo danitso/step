@@ -18,6 +18,7 @@ var (
 		},
 	}
 	initCmdEncryptionKeyFlag = initCmd.Flags().StringP("encryption-key", "k", "", "The encryption key")
+	initCmdGitEmailFlag      = initCmd.Flags().StringP("git-email", "m", "noreply@step.tld", "The git user's email address")
 	initCmdGitPasswordFlag   = initCmd.Flags().StringP("git-password", "p", "", "The git password or token")
 	initCmdGitRepositoryFlag = initCmd.Flags().StringP("git-repository", "r", "", "The git repository URL")
 	initCmdGitUsernameFlag   = initCmd.Flags().StringP("git-username", "u", "", "The git username")

@@ -12,8 +12,8 @@ var (
 	upgradeCmd = &cobra.Command{
 		Use:     "upgrade",
 		Aliases: []string{"up"},
-		Short:   "Upgrade a resource",
-		Long:    "Upgrade a resource",
+		Short:   "Upgrade the toolchain",
+		Long:    "Upgrade the toolchain",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},
