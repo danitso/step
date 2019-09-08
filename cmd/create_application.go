@@ -15,6 +15,7 @@ const (
 	defaultCronInterval       = 5
 	defaultDatabaseMemory     = 4096
 	defaultDatabaseSize       = 16384
+	defaultRuntimeCacheSize   = 32
 	defaultRuntimeMemoryLimit = 128
 	defaultRuntimeWorkerLimit = 8
 )
@@ -72,6 +73,10 @@ var (
 	createApplicationCmdDatabaseSizeStagingFlag            = createApplicationCmd.PersistentFlags().Uint32("database-size-staging", defaultDatabaseSize, "The database size for the staging tier")
 	createApplicationCmdDatabaseSizeTestingFlag            = createApplicationCmd.PersistentFlags().Uint32("database-size-testing", defaultDatabaseSize, "The database size for the testing tier")
 	createApplicationCmdDatabaseSystemFlag                 = createApplicationCmd.PersistentFlags().String("database-system", "", "The database system (mongodb, mssql or mysql)")
+	createApplicationCmdEnableDevelopmentTierFlag          = createApplicationCmd.PersistentFlags().Bool("enable-development", true, "Whether to enable the development tier")
+	createApplicationCmdEnableReviewTierFlag               = createApplicationCmd.PersistentFlags().Bool("enable-review", false, "Whether to enable the review tier")
+	createApplicationCmdEnableStagingTierFlag              = createApplicationCmd.PersistentFlags().Bool("enable-staging", true, "Whether to enable the staging tier")
+	createApplicationCmdEnableTestingTierFlag              = createApplicationCmd.PersistentFlags().Bool("enable-testing", false, "Whether to enable the testing tier")
 	createApplicationCmdGitBranchDevelopmentFlag           = createApplicationCmd.PersistentFlags().String("git-branch-development", "develop", "The name of the development branch")
 	createApplicationCmdGitBranchProductionFlag            = createApplicationCmd.PersistentFlags().String("git-branch-production", "master", "The name of the production branch")
 	createApplicationCmdGitBranchStagingFlag               = createApplicationCmd.PersistentFlags().String("git-branch-staging", "stage", "The name of the staging branch")
@@ -83,7 +88,16 @@ var (
 	createApplicationCmdPackageRepositoryFlag              = createApplicationCmd.PersistentFlags().StringP("package-repository", "R", "", "The package repository URL")
 	createApplicationCmdPackageRepositoryPasswordFlag      = createApplicationCmd.PersistentFlags().StringP("package-repository-password", "P", "", "The package repository password")
 	createApplicationCmdPackageRepositoryUsernameFlag      = createApplicationCmd.PersistentFlags().StringP("package-repository-username", "U", "", "The package repository username")
-	createApplicationCmdReviewDeploymentsFlag              = createApplicationCmd.PersistentFlags().Bool("review-deployments", false, "Whether to enable review deployments")
+	createApplicationCmdRuntimeCacheEnabledDevelopmentFlag = createApplicationCmd.PersistentFlags().Bool("runtime-cache-enabled-development", false, "Whether to enable the bytecode cache for the development tier")
+	createApplicationCmdRuntimeCacheEnabledProductionFlag  = createApplicationCmd.PersistentFlags().Bool("runtime-cache-enabled-production", true, "Whether to enable the bytecode cache for the production tier")
+	createApplicationCmdRuntimeCacheEnabledReviewFlag      = createApplicationCmd.PersistentFlags().Bool("runtime-cache-enabled-review", true, "Whether to enable the bytecode cache for the review tier")
+	createApplicationCmdRuntimeCacheEnabledStagingFlag     = createApplicationCmd.PersistentFlags().Bool("runtime-cache-enabled-staging", true, "Whether to enable the bytecode cache for the staging tier")
+	createApplicationCmdRuntimeCacheEnabledTestingFlag     = createApplicationCmd.PersistentFlags().Bool("runtime-cache-enabled-testing", true, "Whether to enable the bytecode cache for the testing tier")
+	createApplicationCmdRuntimeCacheSizeDevelopmentFlag    = createApplicationCmd.PersistentFlags().Uint8("runtime-cache-size-development", defaultRuntimeCacheSize, "The size of the bytecode cache for the development tier")
+	createApplicationCmdRuntimeCacheSizeProductionFlag     = createApplicationCmd.PersistentFlags().Uint8("runtime-cache-size-production", defaultRuntimeCacheSize, "The size of the bytecode cache for the production tier")
+	createApplicationCmdRuntimeCacheSizeReviewFlag         = createApplicationCmd.PersistentFlags().Uint8("runtime-cache-size-review", defaultRuntimeCacheSize, "The size of the bytecode cache for the review tier")
+	createApplicationCmdRuntimeCacheSizeStagingFlag        = createApplicationCmd.PersistentFlags().Uint8("runtime-cache-size-staging", defaultRuntimeCacheSize, "The size of the bytecode cache for the staging tier")
+	createApplicationCmdRuntimeCacheSizeTestingFlag        = createApplicationCmd.PersistentFlags().Uint8("runtime-cache-size-testing", defaultRuntimeCacheSize, "The size of the bytecode cache for the testing tier")
 	createApplicationCmdRuntimeMemoryLimitDevelopmentFlag  = createApplicationCmd.PersistentFlags().Uint16("runtime-memory-limit-development", defaultRuntimeMemoryLimit, "The memory allocation per runtime worker for the development tier")
 	createApplicationCmdRuntimeMemoryLimitProductionFlag   = createApplicationCmd.PersistentFlags().Uint16("runtime-memory-limit-production", defaultRuntimeMemoryLimit, "The memory allocation per runtime worker for the production tier")
 	createApplicationCmdRuntimeMemoryLimitReviewFlag       = createApplicationCmd.PersistentFlags().Uint16("runtime-memory-limit-review", defaultRuntimeMemoryLimit, "The memory allocation per runtime worker for the review tier")

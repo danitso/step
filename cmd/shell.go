@@ -18,6 +18,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
+	shellCmdNameFlag = shellCmd.PersistentFlags().String("name", "", "The resource name")
 )
 
 func init() {

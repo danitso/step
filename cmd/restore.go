@@ -17,6 +17,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
+	restoreCmdNameFlag = restoreCmd.PersistentFlags().String("name", "", "The resource name")
 	restoreCmdPathFlag = restoreCmd.PersistentFlags().String("path", "", "The absolute path to a backup file")
 	restoreCmdPipeFlag = restoreCmd.PersistentFlags().Bool("pipe", false, "Whether to retrieve the backup data from STDIN")
 )

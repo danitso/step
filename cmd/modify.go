@@ -19,6 +19,7 @@ var (
 		},
 	}
 	modifyCmdDeployFlag = modifyCmd.PersistentFlags().Bool("deploy", false, "Whether to deploy the resource")
+	modifyCmdNameFlag   = modifyCmd.PersistentFlags().String("name", "", "The resource name")
 )
 
 func init() {

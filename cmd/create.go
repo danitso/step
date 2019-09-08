@@ -18,6 +18,7 @@ var (
 		},
 	}
 	createCmdDeployFlag = createCmd.PersistentFlags().Bool("deploy", false, "Whether to deploy the resource")
+	createCmdNameFlag   = createCmd.PersistentFlags().String("name", "", "The resource name")
 )
 
 func init() {

@@ -9,19 +9,18 @@ import (
 )
 
 var (
-	describeCmd = &cobra.Command{
-		Use:     "describe",
-		Aliases: []string{"desc"},
-		Short:   "Describe a resource",
-		Long:    "Describe a resource",
+	createCacheCmd = &cobra.Command{
+		Use:   "cache",
+		Short: "Create a cache resource",
+		Long:  "Create a cache resource",
 		Run: func(cmd *cobra.Command, args []string) {
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
-	describeCmdNameFlag = describeCmd.PersistentFlags().String("name", "", "The resource name")
+	createCacheCmdEnvironmentFlag = createCacheCmd.PersistentFlags().String("environment", "", "The name of the environment to create the cache for")
 )
 
 func init() {
-	rootCmd.AddCommand(describeCmd)
-	changeHelpUsageText(describeCmd)
+	createCmd.AddCommand(createCacheCmd)
+	changeHelpUsageText(createCacheCmd)
 }

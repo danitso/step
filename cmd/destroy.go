@@ -17,6 +17,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
+	destroyCmdNameFlag = destroyCmd.PersistentFlags().String("name", "", "The resource name")
 )
 
 func init() {

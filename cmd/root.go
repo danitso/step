@@ -19,8 +19,7 @@ const (
 )
 
 var (
-	productVersion = ""
-	rootCmd        = &cobra.Command{
+	rootCmd = &cobra.Command{
 		Use:   "step",
 		Short: "STEP is a Simplified Toolchain for Extensible Platforms",
 		Long: heredoc.Doc(`
@@ -34,6 +33,9 @@ var (
 	rootCmdDebugFlag     = rootCmd.PersistentFlags().BoolP("debug", "d", false, "Display debug messages")
 	rootCmdVerboseFlag   = rootCmd.PersistentFlags().BoolP("verbose", "v", false, "Display verbose messages")
 	rootCmdVersionFlag   = rootCmd.Flags().BoolP("version", "V", false, "Display version information")
+
+	imagesBox    *packr.Box
+	templatesBox *packr.Box
 )
 
 func init() {
@@ -41,7 +43,10 @@ func init() {
 }
 
 // Execute invokes the root command.
-func Execute(imagesBox, templatesBox *packr.Box) {
+func Execute(imgBox, tplBox *packr.Box) {
+	imagesBox = imgBox
+	templatesBox = tplBox
+
 	changeHelpUsageText(rootCmd)
 
 	if err := rootCmd.Execute(); err != nil {

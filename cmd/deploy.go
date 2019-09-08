@@ -17,6 +17,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
+	deployCmdNameFlag = deployCmd.PersistentFlags().String("name", "", "The resource name")
 )
 
 func init() {

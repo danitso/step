@@ -17,6 +17,7 @@ var (
 			cmd.HelpFunc()(cmd, args)
 		},
 	}
+	backupCmdNameFlag = backupCmd.PersistentFlags().String("name", "", "The resource name")
 	backupCmdPathFlag = backupCmd.PersistentFlags().String("path", "", "The absolute path to a backup file")
 	backupCmdPipeFlag = backupCmd.PersistentFlags().Bool("pipe", false, "Whether to write the backup data to STDOUT")
 )

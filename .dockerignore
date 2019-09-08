@@ -4,3 +4,19 @@
 
 bin/
 dist/
+packrd/
+
+main-packr.go
+
+*~
+*.backup
+*.bak
+*.dll
+*.exe
+*.iml
+*.log
+*.test
+
+.*.swp
+.DS_Store
+.vscode
